@@ -1,0 +1,76 @@
+*******Guarda pra caso de error, reutilizar essa appBar
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 5.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ){
+                        Box(
+                            modifier = Modifier
+                                .size(50.dp)
+                                .clip(CircleShape)
+                                .border(width = 1.dp, color = Color.Black, shape = CircleShape),
+                            contentAlignment = Alignment.Center,
+                        ) {
+
+                        }
+
+                        //icone de notificação
+                        Box(
+                            contentAlignment = Alignment.Center,
+
+                            modifier = Modifier
+                                .size(50.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Notifications,
+                                contentDescription = "Favorite",
+                                tint = Color.White,
+                                modifier = Modifier
+                                    .size(35.dp)
+                            )
+                        }
+                    }
+
+   -----------------------------------------------------------
+
+                    //Corpo do aplicativo, dividido em colunas
+                                Column(
+                                    modifier = Modifier
+                                        .background(Color.White)
+                                        .fillMaxWidth()
+                                        .padding(bottom = 8.dp)
+                                        .border(width = 1.dp, color = Color.Black)
+                                        .background(color = Color.Yellow)
+                                        .height(200.dp),
+                                    verticalArrangement = Arrangement.Center,
+                                    horizontalAlignment = Alignment.CenterHorizontally
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .border(width = 2.dp, color = Color.Black)
+                                        ){
+
+                                        Row(
+                                            Modifier
+                                                .padding(PaddingValues(all = 10.dp))
+                                                .fillMaxWidth(),
+                                            horizontalArrangement = Arrangement.SpaceBetween
+                                        ) {
+
+
+                                            Column(modifier = Modifier
+                                                .border(width = 2.dp, color = Color.Black)
+                                                .padding(5.dp)
+                                                ){
+                                                Text(text = "Texto 1")
+                                            }
+                                            Column(modifier = Modifier
+                                                .border(width = 2.dp, color = Color.Black)
+                                                .padding(5.dp)
+                                            ){
+                                                Text(text = "Textos 2")
+                                            }
+                                        }
+                                    }
+                                }
