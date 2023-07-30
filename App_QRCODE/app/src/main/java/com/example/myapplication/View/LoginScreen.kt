@@ -63,7 +63,7 @@ fun LoginScreen() {
 
                 Image(
                     painter = painter,
-                    contentDescription = "Descrição da imagem da tela",
+                    contentDescription = "Descrição da imagem da Tela",
                     modifier = Modifier,
                     contentScale = ContentScale.FillBounds
                 )
