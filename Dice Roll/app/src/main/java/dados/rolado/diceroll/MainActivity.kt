@@ -15,6 +15,8 @@ import androidx.compose.ui.unit.dp
 import dados.rolado.diceroll.ui.theme.DiceRollTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -28,7 +30,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             DiceRollTheme {
-                DiceRollerApp()
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ){
+                    DiceRollerApp()
+                }
             }
         }
     }
@@ -99,12 +106,12 @@ fun DiceWithButtonAndImage(modificacao: Modifier = Modifier) {
     }*/
 }
 
-@Preview(showSystemUi = true)
+@Preview
 @Composable
 fun DiceRollerApp() {
-    DiceWithButtonAndImage(modificacao = Modifier
-        /**/
-        .wrapContentSize(Alignment.Center)
+    DiceWithButtonAndImage(
+        modificacao = Modifier
+            .wrapContentSize(Alignment.Center)
     )
 
 }
