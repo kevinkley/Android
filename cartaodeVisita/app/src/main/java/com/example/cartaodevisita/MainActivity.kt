@@ -121,7 +121,7 @@ fun cartaoVisita(name: String, modifier: Modifier = Modifier) {
                         contentDescription = "instagram",
                         modifier = Modifier.height(18.dp)
                     )
-                    Text(text = " @kevinkley", fontSize = 12.sp)
+                    Text(text = " @kevinkleys", fontSize = 12.sp)
                 }
                 Row(
                     horizontalArrangement = Arrangement.Center,

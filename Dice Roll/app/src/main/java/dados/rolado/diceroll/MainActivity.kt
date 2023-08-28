@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DiceWithButtonAndImage(modificacao: Modifier = Modifier) {
     var resultado by remember { mutableStateOf(1) }
-    val imageResource = when(resultado){
+    val imageResource = when (resultado) {
         1 -> R.drawable.dice_1
         2 -> R.drawable.dice_2
         3 -> R.drawable.dice_3
@@ -54,59 +54,27 @@ fun DiceWithButtonAndImage(modificacao: Modifier = Modifier) {
     }
     Column(
         modifier = modificacao,
-            horizontalAlignment = CenterHorizontally
-    ){
+        horizontalAlignment = CenterHorizontally
+    ) {
 
         Image(
             painter = painterResource(id = imageResource),
             contentDescription = resultado.toString(),
-            )
+        )
 
-        Spacer(modificacao .height(16.dp))
+        Spacer(modificacao.height(16.dp))
 
         //Botão que rola o dado de forma aleátoria
         Button(
             onClick = {
-                resultado = (1..6).random() },
-        ){
+                resultado = (1..6).random()
+            },
+        ) {
             Text(text = stringResource(R.string.roll))
         }
     }
-
-/*Column(
-        modifier = modificacao
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
-    ) {
-        Row(
-            modifier = modificacao
-                .fillMaxWidth()
-                .weight(2f)
-                .shadow(1.dp),
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(text = "Topo")
-        }
-
-        Surface(
-            modifier = modificacao
-                .size(100.dp)
-                .weight(2f)
-                .background(Color.Black),
-            shape = RectangleShape,
-            shadowElevation = 10.dp,
-            contentColor = Blue,
-        ) {
-            Text(text = "Conteúdo no Surface",
-                modificacao
-                    .align(CenterHorizontally),
-            )
-        }
-    }*/
 }
-
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun DiceRollerApp() {
     DiceWithButtonAndImage(
